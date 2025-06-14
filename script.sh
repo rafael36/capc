@@ -4,7 +4,7 @@ sudo usermod -aG fuse $USER
 
 docker run -d --name tailscaled --net=host --privileged tailscale/tailscale tailscaled
 
-docker exec tailscaled tailscale up --authkey=tskey-auth-kEbHL9epX221CNTRL-Y2xU91BPLjK8PMMan9nLiKksUJWmZSfrR --hostname=docker-tailscale
+docker exec tailscaled tailscale up --auth-key=tskey-auth-k8bCbtUnQ821CNTRL-apiMHUxgRD9c2Z2PuNocC9V9BZPriNZi --hostname=docker-tailscale
 
 wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/dockerfile
 
