@@ -10,8 +10,6 @@ wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/dockerfile
 
 wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/start.sh
 
-wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/rclone.conf
-
 chmod +x script.sh
 
 docker build -t meu-debian-gui .
