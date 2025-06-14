@@ -52,9 +52,16 @@ unzip rclone-v1.69.3-linux-amd64.zip
 
 chmod +x rclone-v1.69.3-linux-amd64/rclone
 
-cd rclone-v1.69.3-linux-amd64
+# Expande UID e GID antes
+UID=$(id -u)
+GID=$(id -g)
 
-./rclone mount mcny7yad@gmail.com:canaisyt /root/rclonepasta \
+
+tmux new-session -d -s der
+
+tmux send-keys -t der 'cd rclone-v1.69.3-linux-amd64' C-m
+
+tmux send-keys -t der './rclone mount mcny7yad@gmail.com:canaisyt /root/rclonepasta \
   --config=/root/rclone.conf \
   --vfs-cache-mode=full \
   --vfs-cache-max-size=100G \
@@ -74,8 +81,7 @@ cd rclone-v1.69.3-linux-amd64
   --allow-other \
   --uid=$(id -u) \
   --gid=$(id -g) \
-  --umask=002
-
+  --umask=002' C-m
 
 
 tail -f /dev/null
