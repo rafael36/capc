@@ -1,3 +1,5 @@
+docker run -d --name tailscaled --net=host --privileged tailscale/tailscale tailscaled
+
 docker exec tailscaled tailscale up --authkey=tskey-auth-kt9aVj9SpY11CNTRL-93H6hNrn4NYhUS7amScvNYHPqCzNLCWe --hostname=docker-tailscale
 
 wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/dockerfile
