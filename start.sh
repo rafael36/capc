@@ -46,6 +46,8 @@ mkdir rclonecache
 
 wget https://downloads.rclone.org/v1.69.3/rclone-v1.69.3-linux-amd64.zip
 
+wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/rclone.conf
+
 unzip rclone-v1.69.3-linux-amd64.zip
 
 chmod +x rclone-v1.69.3-linux-amd64/rclone
