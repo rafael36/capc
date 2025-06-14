@@ -41,4 +41,30 @@ sleep 15
 tmux new-session -d -s fsx
 tmux send-keys -t fsx 'wine CapCut/CapCut.exe' C-m
 
+mkdir rclonepasta
+mkdir rclonecache
+
+./rclone mount mcny7yad@gmail.com:canaisyt /root/rclonepasta \
+  --vfs-cache-mode=full \
+  --vfs-cache-max-size=100G \
+  --cache-dir=/rclonecache \
+  --vfs-cache-max-age=24h \
+  --vfs-write-back=10s \
+  --buffer-size=64M \
+  --dir-cache-time=12h \
+  --poll-interval=15s \
+  --vfs-read-chunk-size=64M \
+  --vfs-read-chunk-size-limit=1G \
+  --transfers=4 \
+  --checkers=8 \
+  --tpslimit=4 \
+  --drive-chunk-size=64M \
+  --log-level=INFO \
+  --allow-other \
+  --uid=$(id -u) \
+  --gid=$(id -g) \
+  --umask=002
+
+
+
 tail -f /dev/null
