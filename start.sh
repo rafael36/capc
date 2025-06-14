@@ -52,7 +52,10 @@ unzip rclone-v1.69.3-linux-amd64.zip
 
 chmod +x rclone-v1.69.3-linux-amd64/rclone
 
-./root/rclone-v1.69.3-linux-amd64/rclone mount mcny7yad@gmail.com:canaisyt /root/rclonepasta \
+cd rclone-v1.69.3-linux-amd64
+
+./rclone mount mcny7yad@gmail.com:canaisyt /root/rclonepasta \
+  --config=/root/rclone.conf \
   --vfs-cache-mode=full \
   --vfs-cache-max-size=100G \
   --cache-dir=/rclonecache \
