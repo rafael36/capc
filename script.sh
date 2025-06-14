@@ -1,6 +1,4 @@
-sudo apt install fuse3
 
-sudo usermod -aG fuse $USER
 
 docker run -d --name tailscaled --net=host --privileged tailscale/tailscale tailscaled
 
@@ -15,3 +13,5 @@ chmod +x script.sh
 docker build -t meu-debian-gui .
 
 docker run -it --net=host --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined meu-debian-gui
+
+docker ps
