@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 \
   curl gpg gnupg2 nano xclip firefox-esr \
   python3 python3-pip python3.11-venv python3-tk python3-dev \
-  sudo fuse3 \
+  sudo fuse3 unzip \
   && rm -rf /var/lib/apt/lists/*
 
 RUN dpkg --add-architecture i386
