@@ -6,9 +6,9 @@ Xvfb :1 -screen 0 1360x768x24 &
 sleep 2
 export DISPLAY=:1
 
-# Inicia Fluxbox dentro do tmux (sessão "flux")
-tmux new-session -d -s flux
-tmux send-keys -t flux 'DISPLAY=:1 fluxbox' C-m
+openbox &
+xterm &
+
 
 # Inicia x11vnc dentro do tmux (sessão "fee")
 tmux new-session -d -s fee
