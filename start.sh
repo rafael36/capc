@@ -8,7 +8,7 @@ export DISPLAY=:1
 
 openbox &
 xterm &
-
+thunar &
 
 # Inicia x11vnc dentro do tmux (sessão "fee")
 tmux new-session -d -s fee
