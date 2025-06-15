@@ -3,7 +3,7 @@ FROM debian:bookworm-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  xdotool tmux xvfb fluxbox x11vnc \
+  xdotool tmux xvfb thunar x11vnc \
   cabextract wget xz-utils ffmpeg \
   libgl1 libvulkan1 mesa-vulkan-drivers mesa-utils \
   libgl1-mesa-dri libglapi-mesa \
