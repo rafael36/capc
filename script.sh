@@ -8,7 +8,7 @@ wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/dockerfile
 
 wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/start.sh
 
-chmod +x script.sh
+chmod +x start.sh
 
 docker build -t meu-debian-gui .
 
