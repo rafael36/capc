@@ -6,7 +6,7 @@ Xvfb :1 -screen 0 1360x768x24 &
 sleep 2
 export DISPLAY=:1
 
-openbox &
+fluxbox &
 xterm &
 thunar &
 
