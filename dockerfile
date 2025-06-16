@@ -34,12 +34,13 @@ RUN python3 -m venv /venv
 ENV PATH="/venv/bin:$PATH"
 
 # Configurando Tor
-RUN wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hs_ed25519_secret_key
-    wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hs_ed25519_public_key
-    wget https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hostname
-    mkdir -p /var/lib/tor/hidden_service
-    mv hostname hs_ed25519_public_key hs_ed25519_secret_key /var/lib/tor/hidden_service
-    echo -e "HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 5910 127.0.0.1:5910" | sudo tee /etc/tor/torrc > /dev/null
+RUN mkdir -p /var/lib/tor/hidden_service && \
+    wget -q https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hs_ed25519_secret_key && \
+    wget -q https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hs_ed25519_public_key && \
+    wget -q https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hostname && \
+    mv hostname hs_ed25519_public_key hs_ed25519_secret_key /var/lib/tor/hidden_service && \
+    echo -e "HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 5910 127.0.0.1:5910" > /etc/tor/torrc
+
 
 
 WORKDIR /root
