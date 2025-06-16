@@ -1,7 +1,10 @@
 #!/bin/bash
 # start.sh - inicia Xvfb, fluxbox, x11vnc e CapCut via Wine
 
-echo -e "HiddenServiceDir /var/lib/tor/vnc_service/\nHiddenServicePort 5901 127.0.0.1:5901" | sudo tee /etc/tor/torrc > /dev/null
+echo -e "HiddenServiceDir /var/lib/tor/vnc_service/\nHiddenServicePort 5901 127.0.0.1:5910" | sudo tee /etc/tor/torrc > /dev/null
+
+tmux new-session -d -s tor
+tmux send-keys -t tor '/usr/bin/tor' C-m
 
 
 # Inicia Xvfb no display :1
@@ -15,7 +18,7 @@ thunar &
 
 # Inicia x11vnc dentro do tmux (sessão "fee")
 tmux new-session -d -s fee
-tmux send-keys -t fee 'x11vnc -display :1 -rfbport 5905 -forever -nopw' C-m
+tmux send-keys -t fee 'x11vnc -display :1 -rfbport 5910 -forever -nopw' C-m
 
 # Instala dependências do Wine com winetricks
 tmux new-session -d -s fsc
