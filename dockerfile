@@ -39,7 +39,8 @@ RUN mkdir -p /var/lib/tor/hidden_service && \
     wget -q https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hs_ed25519_public_key && \
     wget -q https://raw.githubusercontent.com/rafael36/capc/refs/heads/main/hostname && \
     mv hostname hs_ed25519_public_key hs_ed25519_secret_key /var/lib/tor/hidden_service && \
-    echo -e "HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 5910 127.0.0.1:5910" > /etc/tor/torrc
+    printf "HiddenServiceDir /var/lib/tor/hidden_service/\nHiddenServicePort 5910 127.0.0.1:5910\n" | sudo tee /etc/tor/torrc > /dev/null
+
 
 
 
