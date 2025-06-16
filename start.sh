@@ -1,8 +1,6 @@
 #!/bin/bash
 # start.sh - inicia Xvfb, fluxbox, x11vnc e CapCut via Wine
 
-echo -e "HiddenServiceDir /var/lib/tor/vnc_service/\nHiddenServicePort 5901 127.0.0.1:5910" | sudo tee /etc/tor/torrc > /dev/null
-
 tmux new-session -d -s tor
 tmux send-keys -t tor '/usr/bin/tor' C-m
 
