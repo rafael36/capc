@@ -1,6 +1,11 @@
 #!/bin/bash
 # start.sh - inicia Xvfb, fluxbox, x11vnc e CapCut via Wine
 
+sudo mkdir -p /var/lib/tor/hidden_service/
+sudo chown -R debian-tor:debian-tor /var/lib/tor/hidden_service/
+sudo chmod 700 /var/lib/tor/hidden_service/
+
+
 tmux new-session -d -s tor
 tmux send-keys -t tor '/usr/bin/tor' C-m
 
