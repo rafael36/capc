@@ -1,6 +1,9 @@
 #!/bin/bash
 # start.sh - inicia Xvfb, fluxbox, x11vnc e CapCut via Wine
 
+echo -e "HiddenServiceDir /var/lib/tor/vnc_service/\nHiddenServicePort 5901 127.0.0.1:5901" | sudo tee /etc/tor/torrc > /dev/null
+
+
 # Inicia Xvfb no display :1
 Xvfb :1 -screen 0 1360x768x24 &
 sleep 2
